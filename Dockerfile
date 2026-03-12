@@ -17,4 +17,4 @@ COPY . .
 
 # Google Cloud Run injects the $PORT environment variable dynamically.
 # We must tell Uvicorn to listen on 0.0.0.0 and attach to that specific port.
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["sh", "-c", "python -m uvicorn main:app --host 0.0.0.0 --port ${PORT:-8080}"]
